@@ -1,0 +1,44 @@
+{% extends "base_generic.html" %}
+    {% block content %}
+    {% load static %}
+    <div class="container" style="margin: 0px;padding: 0px;height: auto;">
+        <div class="row d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center">
+            <div class="col d-flex d-md-flex d-xl-flex justify-content-center align-items-center">
+                <div data-bss-hover-animate="pulse" class="search-center" type="button" onclick="location.href = '/'">
+                    <div class="row">
+                        <div class="col">
+                            <h5>Accueil</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><img src="{% static 'acp/icon_accueil.png' %}" style="width: 40%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex d-xl-flex d-xxl-flex justify-content-xl-center align-items-xl-center align-items-xxl-center" style="height: 100%;">
+            <div class="col d-flex justify-content-center align-items-center" style="height: 100%;">
+                <div style="width: 90%;height: 600px;border-radius: 43px;color: #e93f4c;border-style: solid;border-color: var(--bs-dark);background: url(&quot;{% static 'acp/img_ensemble.jpg' %}&quot;) center / cover no-repeat, #454b99;">
+                    <form>
+                        <div class="col text-center d-flex d-xl-flex flex-column justify-content-center">
+                            <div class="row">
+                                <div class="col"><span class="text-center justify-content-xl-center" style="background: transparent;color: var(--bs-white);font-size: 30px;text-align: center;border-style: none;">Aidez-nous pour agir contre la COVID<br>Remplisser le formulaire, et venez rejoindre<br>&nbsp;une communauté forte par son engagement</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-xl-flex justify-content-xl-center"><input class="form-control text_input_usr" type="text" name="firstname" placeholder="Nom" style="color: rgb(255, 255, 255);margin: 5px;"><input class="form-control text_input_usr" type="text" name="lastname" placeholder="Prénom" style="color: rgb(255, 255, 255);margin: 5px;"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-xl-flex justify-content-xl-center"><input class="form-control text_input_usr" type="text" name="email_usr" placeholder="E-mail" inputmode="email" style="color: rgb(255, 255, 255);margin: 5px;"><input class="form-control text_input_usr" type="text" name="social_security_usr" placeholder="N° Sécurité sociale" style="color: rgb(255, 255, 255);margin: 5px;"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-center d-xl-flex justify-content-xl-center">
+                                    <div class="d-flex justify-content-center align-items-center" type="button" style="max-width: 300px;max-height: 40px;width: 300px;border-style: solid;border-color: #212529;background: linear-gradient(90deg, #454b99, #e93f4c);margin: 5px;border-radius: 5px;height: 40px;"><span style="color: #ffffff;">ENVOYER</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

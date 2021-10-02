@@ -1,0 +1,49 @@
+{% extends "base_generic.html" %}
+    {% block content %}
+    {% load static %}
+    <div class="container d-xxl-flex flex-column align-items-center">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" data-bss-hover-animate="pulse" type="button" onclick="location.href = '/avancee'">
+                    <div class="col text-center align-self-center">
+                        <div class="text-center d-xxl-flex justify-content-xxl-center align-items-xxl-center entete">
+                            <h1 class="text-center title-card">Information de la campagne de vaccination</h1>
+                        </div><img class="icon-card" src="{% static 'acp/icon_actualités.png' %}">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" data-bss-hover-animate="pulse" type="button" onclick="location.href = '/info'">
+                    <div class="col text-center align-self-center">
+                        <div class="text-center d-xxl-flex justify-content-xxl-center align-items-xxl-center entete">
+                            <h1 class="text-center title-card">Avancées de la campagne</h1>
+                        </div><img class="icon-card" src="{% static 'acp/icon_main.png' %}">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" data-bss-hover-animate="pulse" type="button" onclick="location.href = '/fight'">
+                    <div class="col text-center align-self-center">
+                        <div class="text-center d-xxl-flex justify-content-xxl-center align-items-xxl-center entete">
+                            <h1 class="text-center title-card">Agir<br>contre la<br>COVID</h1>
+                        </div><img class="icon-card" src="{% static 'acp/icon_bouclier.png' %}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <div data-bss-hover-animate="pulse" class="search-center" type="button" onclick="location.href = 'https://www.sante.fr/cf/carte-depistage-covid.html'">
+                    <div class="row">
+                        <div class="col">
+                            <h5>Centre</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><img src="{% static 'acp/icon_loupe.png' %}" style="width: 40%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

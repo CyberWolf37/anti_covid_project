@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Project-anticovid</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'acp/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="{% static 'acp/styles.css' %}">
+</head>
+
+<body class="d-xxl-flex justify-content-center align-items-center" style="border-radius: 10px;background: radial-gradient(#E93F4C, #6871E2), var(--bs-pink);">
+	{% block content %}{% endblock %}
+	<script src="{% static 'acp/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'acp/bootstrap/js/bs-init.js' %}"></script>
+</body>
