@@ -3,11 +3,11 @@ from django.db import models
 # Create your models here.
 class information(models.Model):
     title = models.CharField(max_length=100)
-    text = models.CharField(max_length=5000)
+    text = models.TextField()
 
 class article(models.Model):
     title = models.CharField(max_length=100)
-    text = models.CharField(max_length=5000)
+    text = models.TextField()
     created_at = models.DateTimeField()
 
 class userFighting(models.Model):

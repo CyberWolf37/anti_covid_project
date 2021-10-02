@@ -29,12 +29,15 @@
                             <div class="col-auto mx-auto" style="width: 80%;">
                                 {% if infos %}
 	                            {% for info in infos %}
-                                <div class="text-center d-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-xl-center align-items-xl-center justify-content-xxl-center align-items-xxl-center info-component" data-bss-hover-animate="pulse" type="button">
+                                <div id="info-card" class="text-center d-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-xl-center align-items-xl-center justify-content-xxl-center align-items-xxl-center info-component" data-bss-hover-animate="pulse" type="button" onclick="textize()">
                                     <div class="col-auto text-center align-self-center order-first ms-auto">
-                                        <h2 class="text-center d-block justify-content-xxl-center align-items-xxl-center" style="font-size: 2vw;">{{ info.title }}</h2>
+                                        <span class="text-center d-block justify-content-xxl-center align-items-xxl-center" style="font-size: 2vw;">{{ info.title }}</span>
                                     </div>
                                     <div class="col-2 offset-2 me-auto"><img src="{% static 'acp/icon_triangle.png' %}" style="transform: rotate(90deg) scale(0.50);width: 8vw;"></div>
                                 </div>
+                                
+                
+                                <!--<span class="text-center d-block justify-content-xxl-center align-items-xxl-center" style="font-size: 2vw;">{{ info.text }}</span>-->
                                 {% endfor %}
 	                            {% endif %}
                             </div>
@@ -44,4 +47,13 @@
             </div>
         </div>
     </div>
+    <script>
+        function textize() {
+            console.log("Hello world")
+            var textSpan = document.createElement('span')
+            textSpan.innerHTML = "{{ info.text }}"
+            var divCard = document.getElementById('info-card');
+            divCard.appendChild(textSpan) 
+        } 
+    </script>
     {% endblock %}
