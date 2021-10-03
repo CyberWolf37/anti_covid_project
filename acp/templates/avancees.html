@@ -25,35 +25,60 @@
                                 <h1 style="font-size: 5vw;"><span style="text-decoration: underline;">Vaccins et Vaccination</span></h1>
                             </div>
                         </div>
+                        {% if infos %}
+                        {% for info in infos %}
                         <div class="row">
                             <div class="col-auto mx-auto" style="width: 80%;">
-                                {% if infos %}
-	                            {% for info in infos %}
-                                <div id="info-card" class="text-center d-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-xl-center align-items-xl-center justify-content-xxl-center align-items-xxl-center info-component" data-bss-hover-animate="pulse" type="button" onclick="textize()">
-                                    <div class="col-auto text-center align-self-center order-first ms-auto">
-                                        <span class="text-center d-block justify-content-xxl-center align-items-xxl-center" style="font-size: 2vw;">{{ info.title }}</span>
+                                <div name="info-card" class="row">
+                                    <div class="text-center d-flex d-xl-flex flex-row justify-content-center align-items-center justify-content-xl-center align-items-xl-center justify-content-xxl-center align-items-xxl-center info-component" data-bss-hover-animate="pulse" type="button">
+                                        <div class="col-auto text-center align-self-center order-first ms-auto">
+                                            <span class="text-center d-block justify-content-xxl-center align-items-xxl-center" style="font-size: 2vw;">{{ info.title }}</span>
+                                        </div>
+                                        <div class="col-2 offset-2 me-auto"><img src="{% static 'acp/icon_triangle.png' %}" style="transform: rotate(90deg) scale(0.50);width: 8vw;"></div>
                                     </div>
-                                    <div class="col-2 offset-2 me-auto"><img src="{% static 'acp/icon_triangle.png' %}" style="transform: rotate(90deg) scale(0.50);width: 8vw;"></div>
+                                    <p id="textfilled" style="display: none">{{info.text}}</p>                               
                                 </div>
-                                
-                
-                                <!--<span class="text-center d-block justify-content-xxl-center align-items-xxl-center" style="font-size: 2vw;">{{ info.text }}</span>-->
-                                {% endfor %}
-	                            {% endif %}
                             </div>
                         </div>
+                        {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        function textize() {
-            console.log("Hello world")
-            var textSpan = document.createElement('span')
-            textSpan.innerHTML = "{{ info.text }}"
-            var divCard = document.getElementById('info-card');
-            divCard.appendChild(textSpan) 
-        } 
+        var cards = document.getElementsByName("info-card");
+         console.log(cards)
+            for (var index = 0; index < cards.length; index++) {
+                var div = cards[index];
+                console.log(div)
+                console.log(div.getElementsByTagName("p"))
+                div.addEventListener('click', event => {
+                    console.log(div)
+                    var p = div.getElementsByTagName("p")[0];
+                    console.log(p)
+                    if (p.style.display === "none") {
+                        p.style.display = "block";
+                    } else {
+                        p.style.display = "none";
+                    }
+                })
+                
+            };
+        /*function textize() {
+            var x = document.getElementsByName("textfilled");
+            for (var index = 0; index < x.length; index++) {
+                x[index].addEventListener('click', event => {
+                    if (x[index].style.display === "none") {
+                        x[index].style.display = "block";
+                    } else {
+                        x[index].style.display = "none";
+                    }
+                })
+                
+            }*/
+            //var x = document.getElementById("textfilled"); 
     </script>
+    
     {% endblock %}
