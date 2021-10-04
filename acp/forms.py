@@ -1,5 +1,6 @@
 from django import forms
 
+
 class FightForm(forms.Form):
     name = forms.CharField(max_length=30)
     lastname = forms.CharField(max_length=30)
