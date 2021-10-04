@@ -19,26 +19,34 @@
         <div class="row d-flex d-xl-flex d-xxl-flex justify-content-xl-center align-items-xl-center align-items-xxl-center" style="height: 100%;">
             <div class="col d-flex justify-content-center align-items-center" style="height: 100%;">
                 <div style="width: 90%;height: 600px;border-radius: 43px;color: #e93f4c;border-style: solid;border-color: var(--bs-dark);background: url(&quot;{% static 'acp/img_ensemble.jpg' %}&quot;) center / cover no-repeat, #454b99;">
-                    <form>
+                    <form action="fight" method="post">
+                        {% csrf_token %}
                         <div class="col text-center d-flex d-xl-flex flex-column justify-content-center">
                             <div class="row">
                                 <div class="col"><span class="text-center justify-content-xl-center" style="background: transparent;color: var(--bs-white);font-size: 30px;text-align: center;border-style: none;">Aidez-nous pour agir contre la COVID<br>Remplisser le formulaire, et venez rejoindre<br>&nbsp;une communauté forte par son engagement</span></div>
                             </div>
                             <div class="row">
-                                <div class="col d-xl-flex justify-content-xl-center"><input class="form-control text_input_usr" type="text" name="firstname" placeholder="Nom" style="color: rgb(255, 255, 255);margin: 5px;"><input class="form-control text_input_usr" type="text" name="lastname" placeholder="Prénom" style="color: rgb(255, 255, 255);margin: 5px;"></div>
+                                <div class="col d-xl-flex justify-content-xl-center"><input class="form-control text_input_usr" type="text" name="{{ form.name.name }}" id="{{ form.name.id_for_label }}" placeholder="Nom" style="color: rgb(255, 255, 255);margin: 5px;"><input class="form-control text_input_usr" type="text" name="{{ form.lastname.name }}" id="{{ form.lastname.id_for_label }}" placeholder="Prénom" style="color: rgb(255, 255, 255);margin: 5px;"></div>
                             </div>
                             <div class="row">
-                                <div class="col d-xl-flex justify-content-xl-center"><input class="form-control text_input_usr" type="text" name="email_usr" placeholder="E-mail" inputmode="email" style="color: rgb(255, 255, 255);margin: 5px;"><input class="form-control text_input_usr" type="text" name="social_security_usr" placeholder="N° Sécurité sociale" style="color: rgb(255, 255, 255);margin: 5px;"></div>
+                                <div class="col d-xl-flex justify-content-xl-center"><input class="form-control text_input_usr" type="text" name="{{ form.email.name }}" id="{{ form.email.id_for_label }}" placeholder="E-mail" inputmode="email" style="color: rgb(255, 255, 255);margin: 5px;"><input class="form-control text_input_usr" type="text" name="{{ form.social_security_usr.name }}" id="{{ form.social_security_usr.id_for_label }}" placeholder="N° Sécurité sociale" style="color: rgb(255, 255, 255);margin: 5px;"></div>
                             </div>
                             <div class="row">
                                 <div class="col text-center d-xl-flex justify-content-xl-center">
-                                    <div class="d-flex justify-content-center align-items-center" type="button" style="max-width: 300px;max-height: 40px;width: 300px;border-style: solid;border-color: #212529;background: linear-gradient(90deg, #454b99, #e93f4c);margin: 5px;border-radius: 5px;height: 40px;"><span style="color: #ffffff;">ENVOYER</span></div>
+                                    <button class="d-flex justify-content-center align-items-center" type="submit" style="max-width: 300px;max-height: 40px;width: 300px;border-style: solid;border-color: #212529;background: linear-gradient(90deg, #454b99, #e93f4c);margin: 5px;border-radius: 5px;height: 40px;"><span style="color: #ffffff;">ENVOYER</span></div>
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
+            {% if messages %}
+            {% for message in messages %}
+            <div class="row d-flex justify-content-center align-items-center text-center {{ message.tags }}" style="background: #44c39e;border-radius: 10px;">
+                <span style="font-size: 20px"> {{ message }} </span>
+            </div>
+            {% endfor %}
+            {% endif %}
         </div>
     </div>
     {% endblock %}

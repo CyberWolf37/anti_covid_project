@@ -75,6 +75,10 @@ h5 {
   height: auto;
 }
 
+.text-component {
+  display: none;
+}
+
 .info-component:hover {
   background: linear-gradient(90deg, #6871E2 20%, #E0724F 80%);
 }

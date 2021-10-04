@@ -1,4 +1,6 @@
 from django.db import models
+from datetime import datetime
+from .forms import FightForm
 
 # Create your models here.
 class information(models.Model):
@@ -16,3 +18,14 @@ class userFighting(models.Model):
     email = models.EmailField(max_length=200)
     socialSecurity = models.BigIntegerField()
     created_at = models.DateTimeField()
+
+    @classmethod
+    def create(cls, form:FightForm ):
+        name = form.cleaned_data['name']
+        lastname = form.cleaned_data['lastname']
+        email = form.cleaned_data['email']
+        socialSecurity = form.cleaned_data['social_security_usr']
+        created_at = datetime.now()
+
+        profil = cls(name=name, lastname=lastname, email=email, socialSecurity=socialSecurity ,created_at=created_at)
+        return profil

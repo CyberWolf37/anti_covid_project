@@ -1,6 +1,9 @@
 from .models import information as infodb
-from .models import article as articledb
+from .models import article as articledb, userFighting
+from .forms import FightForm
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
+from django.contrib import messages
 
 from datetime import datetime
 
@@ -28,4 +31,13 @@ def avancee(request):
 
 def fight(request):
 
-    return render(request, 'agir.html')
+    if request.method == 'POST':
+        form = FightForm(request.POST)
+        if form.is_valid():
+            usr = userFighting.create(form)
+            usr.save()
+            messages.success(request, 'Merci pour votre soutient à bientôt')
+            return render(request, 'agir.html', {'form': form})
+    else:
+        form = FightForm()
+        return render(request, 'agir.html', {'form': form})
