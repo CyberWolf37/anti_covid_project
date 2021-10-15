@@ -1,7 +1,7 @@
 .card {
   max-width: 380px;
   height: 500px;
-  background: linear-gradient(150deg, #454B99, #E93F4C);
+  background:  #000091;
   border-radius: 10px;
   box-shadow: 3px 3px 10px;
   opacity: 0.90;
@@ -11,7 +11,24 @@
 }
 
 .card:hover {
-  background: linear-gradient(150deg, #454B99 20%, #E0724F 80%);
+  background: linear-gradient(150deg, #000091 20%, #e1000f 150%);
+}
+
+.card-white {
+  max-width: 380px;
+  height: 500px;
+  background:  #ffffff;
+  border-radius: 10px;
+  padding-top: 10px;
+  box-shadow: 3px 3px 10px;
+  opacity: 0.90;
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.card-white:hover {
+  background: linear-gradient(150deg, #ffffff 20%, #e1000f 150%);
 }
 
 .entete {
@@ -21,7 +38,22 @@
   border-radius: 10px;
   margin-top: 20px;
   text-align: center;
-  color: #4A55E5;
+  color: #000091;
+  box-shadow: 3px 3px 10px var(--bs-dark);
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.entete-blue {
+  max-width: 330px;
+  max-height: 180px;
+  background: #000091;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: #ffffff;
   box-shadow: 3px 3px 10px var(--bs-dark);
   margin-right: 5px;
   margin-left: 5px;
@@ -45,7 +77,8 @@
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  background: linear-gradient(-122deg, #E93F4C 10%, #454B99 80%), var(--bs-white);
+  background: #000091;
+  color: #ffffff;
   margin: 20px;
   border: 5px solid var(--bs-dark) ;
   font-size: 11px;
@@ -53,7 +86,7 @@
 }
 
 .search-center:hover {
-  background: linear-gradient(-122deg, #E0724F 20%, #454B99 80%);
+  background: linear-gradient(-122deg, #e1000f 20%, #000091 80%);
 }
 
 h5 {
@@ -66,7 +99,7 @@ h5 {
   margin: 0px;
   margin-top: 5px;
   margin-bottom: 5px;
-  background: linear-gradient(90deg, #6871E2 20%, #E93F4C 80%);
+  background: linear-gradient(90deg, #000091 -20%, #ffffff 60%);
   border-radius: 25px;
   border-width: 2px;
   border-style: solid;
@@ -80,28 +113,27 @@ h5 {
 }
 
 .info-component:hover {
-  background: linear-gradient(90deg, #6871E2 20%, #E0724F 80%);
+  background: linear-gradient(90deg, #000091 -20%, #ffffff 60%);
 }
 
 .article-head {
-  border-width: 3px;
-  border-style: solid;
+  border: 3px solid #000091;
   margin: 5px;
   border-radius: 40px;
-  background: linear-gradient(90deg, #6871E2 20%, #E93F4C);
+  background: #ffffff;
+  color: #000091;
 }
 
 .article-card {
-  border-width: 3px;
-  border-style: solid;
+  border: 3px solid #000091;
   margin: 5px;
   border-radius: 40px;
   /*background: linear-gradient(90deg, #6871E2 20%, #E93F4C);*/
 }
 
 .text_input_usr {
-  background: linear-gradient(90deg, #454b99, #e93f4c);
+  background: linear-gradient(90deg, #000091 0%, #ffffff 120%);
   max-width: 300px;
-  border: 2px solid #212529 ;
+  border: 2px solid #ffffff ;
 }
 
